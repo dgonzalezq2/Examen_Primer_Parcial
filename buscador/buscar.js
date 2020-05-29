@@ -70,7 +70,7 @@ const comprobarAnio = (anio) => {
                 return;
             }
         });
-        reject(`El año: "${anio}"0qq no fue encontrado`);
+        reject(`El año: "${anio}"no fue encontrado`);
     });
 };
 
@@ -96,7 +96,8 @@ const obtenerData = async(codPais, anio, path) => {
     await comprobarPais(codPais);
     let mediaPais = vectorPais(codPais)
     return {
-        porcentaje: mediaPais[0],
+        porcentaje: mediaPais[0], //En esta posición se encuentra el porcentaje
+        codigo: mediaPais[2] //En esta posicion se almacena el código del pais
     };
 };
 

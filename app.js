@@ -1,5 +1,6 @@
 const argv = require("./config/yargs").argv;
 const obtenerData = require("./buscador/buscar").obtenerData;
+const guardarData = require("./buscador/generarArchivo").crearArchivo;
 const colors = require("colors");
 
 let dato;
@@ -15,10 +16,15 @@ const menu = () => {
             console.log(`Año: ${argv.anio}`.red);
             console.log(`Valor: ${dato.porcentaje}`.yellow);
         case "guardar":
+            console.log("Se comienza a generar el archivo con la consulta realizada".magenta);
+            guardarData(dato, argv.pais, argv.anio)
+                .then((mensaje) => console.log(colors.green(mensaje)))
+                .catch((err) => console.log(colors.red(err)));
             break;
 
         default:
             console.log("El comando no es válido");
+
             break;
     }
 };
