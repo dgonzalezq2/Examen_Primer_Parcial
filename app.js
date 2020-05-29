@@ -1,28 +1,42 @@
 const argv = require("./config/yargs").argv;
+const obtenerData = require("./buscador/buscar").obtenerData;
 const colors = require("colors");
 
 let dato;
 
-let comando = argv._[0];
-switch (comando) {
-    case "mostrar":
+const menu = () => {
+    let comando = argv._[0];
+    switch (comando) {
+        case "mostrar":
 
-        console.log("Personas que usan internet (% de la poblacion)");
-        console.log(`Pais: ${argv.pais}`);
-        console.log(`Año: ${argv.anio}`);
+            console.log("-----------------------------------------------------".rainbow);
+            console.log("Personas que usan internet (% de la poblacion)".blue);
+            console.log(`Pais: ${argv.pais}`.green);
+            console.log(`Año: ${argv.anio}`.red);
+            console.log(`Valor: ${dato.porcentajePais}`.yellow);
+            console.log("-----------------------------------------------------".rainbow);
 
-        break;
+            break;
 
-    case "guardar":
-        break;
+        case "guardar":
+            break;
 
-    default:
-        console.log("El comando no es válido");
-        break;
-}
+        default:
+            console.log("El comando no es válido");
+            break;
+    }
+};
+
+
 
 const ejecutar = async() => {
-    data = await obtenerData(argv.country, argv.year.toString(), argv.file);
+    dato = await obtenerData(argv.pais, argv.anio.toString(), argv.archivo);
     menu();
-    return data;
+    return dato;
 };
+
+ejecutar()
+    .then()
+    .catch((err) => {
+        console.log(colors.red(err));
+    });

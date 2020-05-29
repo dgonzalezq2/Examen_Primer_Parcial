@@ -102,7 +102,7 @@ const obtenerData = async(codPais, anio, path) => {
     await comprobarAnio(anio);
     await comprobarPais(codPais);
     let porcentajePais = _procentajePais(codPais)
-    return { porcentajePais, mensaje };
+    return { porcentajePais };
 };
 
 module.exports = {
