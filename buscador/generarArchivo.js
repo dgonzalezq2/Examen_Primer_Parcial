@@ -9,7 +9,7 @@ let crearArchivo = (datos, pais, anio) => {
         archivo += `Valor: ${datos.porcentaje}`
         fs.writeFile(`resultados/${datos.codigo}-${anio}.txt`, archivo, (err) => {
             if (err) reject(err);
-            else resolve(`Archivo guardado exitósamente: resultados/${datos.codigo}-${anio}`);
+            else resolve(`Archivo generado: resultados/${datos.codigo}-${anio}`);
         });
     });
 };

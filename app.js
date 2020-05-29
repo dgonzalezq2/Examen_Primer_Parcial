@@ -15,6 +15,7 @@ const menu = () => {
             console.log(`Pais: ${argv.pais}`.green);
             console.log(`Año: ${argv.anio}`.red);
             console.log(`Valor: ${dato.porcentaje}`.yellow);
+            console.log("-----------------------------------------------------".rainbow);
         case "guardar":
             console.log("Se comienza a generar el archivo con la consulta realizada".magenta);
             guardarData(dato, argv.pais, argv.anio)
