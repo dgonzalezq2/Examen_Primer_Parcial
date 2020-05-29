@@ -1,0 +1,19 @@
+{
+  "name": "examen_primer_parcial",
+  "version": "1.0.0",
+  "description": "Resolución del problema del examen planteado por el ingeniero Rodrigo Tufiño",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dgonzalezq2/Examen_Primer_Parcial.git"
+  },
+  "author": "Diego González",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dgonzalezq2/Examen_Primer_Parcial/issues"
+  },
+  "homepage": "https://github.com/dgonzalezq2/Examen_Primer_Parcial#readme"
+}
