@@ -35,7 +35,7 @@ let guardar = {
 }
 
 const argv = require('yargs')
-    .command('mostrar', 'Este comando publicará el % de personas que usan internet de un determinado país en un determinado año', publicar)
+    .command('mostrar', 'Este comando publicará el % de personas que usan internet de un determinado país en un determinado año', mostrar)
     .command('guardar', 'Este comando almacenará los resultados de la consulta en un archivo .txt con el código del país y el año de la consulta', guardar)
     .help().argv;
 
