@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/dgonzalezq2/Examen_Primer_Parcial/issues"
   },
-  "homepage": "https://github.com/dgonzalezq2/Examen_Primer_Parcial#readme"
+  "homepage": "https://github.com/dgonzalezq2/Examen_Primer_Parcial#readme",
+  "dependencies": {
+    "yargs": "^15.3.1"
+  }
 }
