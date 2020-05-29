@@ -7,12 +7,16 @@ const menu = () => {
 
     let comando = argv._[0];
     switch (comando) {
-        case mostrar:
+        case "mostrar":
+
+            console.log("Personas que usan internet (% de la poblacion)");
+            // console.log(`Pais: ${argv.pais}`);
+            // console.log(`Año: ${argv.anio}`);
 
             break;
 
         default:
-            break;
+            console.log("El comando no es válido");
     }
 
 };
