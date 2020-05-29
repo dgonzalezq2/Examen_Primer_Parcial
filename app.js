@@ -13,11 +13,7 @@ const menu = () => {
             console.log("Personas que usan internet (% de la poblacion)".blue);
             console.log(`Pais: ${argv.pais}`.green);
             console.log(`Año: ${argv.anio}`.red);
-            console.log(`Valor: ${dato.porcentajePais}`.yellow);
-            console.log("-----------------------------------------------------".rainbow);
-
-            break;
-
+            console.log(`Valor: ${dato.porcentaje}`.yellow);
         case "guardar":
             break;
 

@@ -4,11 +4,6 @@ const paisesValidos = require("../modelo/paisesvalidos").paisesValidos;
 let informacion = [];
 let datosPorAnio = [];
 
-/* 
-datosPorAnio[i][0] = Valor Suscripcion: number
-datosPorAnio[i][1] = Nombre del Pais: string
-datosPorAnio[i][2] = Codigo del Pais: string 
-*/
 
 
 /* Valida que el número sea de typo number */
@@ -31,12 +26,12 @@ const cargarDatos = (path) => {
     });
 };
 
-/* Carga los valores de las suscripciones en la variable "datosPorAnio":object */
+/* Carga los valores de suscripciones en la variable "datosPorAnio":object */
 const vectorAnio = async(anio) => {
     let anios = Object.values(informacion[3]);
     anio = anios.indexOf(anio);
     for (let index = 4; index < informacion.length; index++) {
-        datosPorAnio.push([parseInt(informacion[index][anio]), informacion[index][0], informacion[index][1]]);
+        datosPorAnio.push([informacion[index][anio], informacion[index][0], informacion[index][1], informacion[index][2]]); //En la posición 0 se encuentra los valores de las suscripciones, %total usuarios
     }
     return true;
 };
@@ -52,7 +47,7 @@ const limpiarPaises = () => {
     datosPorAnio = aux;
 };
 
-/* Comprueba si el codigo del pais ingresado forma parte del listado */
+/* Comprueba si el codigo del pais ingresado existe en el listado */
 const comprobarPais = (cod_Pais) => {
     return new Promise((resolve, reject) => {
         datosPorAnio.forEach((element) => {
@@ -65,7 +60,7 @@ const comprobarPais = (cod_Pais) => {
     });
 };
 
-/* Comprueba si anio ingresado forma parte del listado*/
+/* Comprueba si anio ingresado existe en el listado*/
 const comprobarAnio = (anio) => {
     let anios = Object.values(informacion[3]);
     return new Promise((resolve, reject) => {
@@ -79,10 +74,8 @@ const comprobarAnio = (anio) => {
     });
 };
 
-
-
-/* Valor de suscripcion del pais y año especificado */
-const _procentajePais = (codPais) => {
+/* Valor de suscripcion del pais y anio especificado */
+const vectorPais = (codPais) => {
     dato = [];
     datosPorAnio.forEach((element) => {
         if (element[2] == codPais) {
@@ -101,8 +94,10 @@ const obtenerData = async(codPais, anio, path) => {
     limpiarPaises();
     await comprobarAnio(anio);
     await comprobarPais(codPais);
-    let porcentajePais = _procentajePais(codPais)
-    return { porcentajePais };
+    let mediaPais = vectorPais(codPais)
+    return {
+        porcentaje: mediaPais[0],
+    };
 };
 
 module.exports = {
