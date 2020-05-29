@@ -80,8 +80,9 @@ const comprobarAnio = (anio) => {
 };
 
 
+
 /* Valor de suscripcion del pais y año especificado */
-const _mediaPais = (codPais) => {
+const _procentajePais = (codPais) => {
     dato = [];
     datosPorAnio.forEach((element) => {
         if (element[2] == codPais) {
@@ -100,9 +101,8 @@ const obtenerData = async(codPais, anio, path) => {
     limpiarPaises();
     await comprobarAnio(anio);
     await comprobarPais(codPais);
-    let paisesAdyacentes = _paisesAdyacentes(mediaPais[0], codPais);
-    let top = _top();
-    return { mediaGlobal, mediaPais, top, paisesAdyacentes, mensaje };
+    let porcentajePais = _procentajePais(codPais)
+    return { porcentajePais, mensaje };
 };
 
 module.exports = {

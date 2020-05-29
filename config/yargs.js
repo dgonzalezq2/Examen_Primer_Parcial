@@ -2,17 +2,17 @@ let mostrar = {
     archivo: {
         demand: true,
         alias: 'f',
-        desc: 'Permite establecer el path del archivo CSV que contiene los datos a analizar'
+        desc: 'Archivo CSV con datos a procesar '
     },
     pais: {
         default: 'ECU',
         alias: 'c',
-        desc: ' Permite determinar el país a analizar a través de su código'
+        desc: ' Código del país que se requiere información'
     },
     anio: {
         default: 1960,
         alias: 'y',
-        desc: 'Permite especificar el año para el cual se requiere las estadísticas'
+        desc: 'Año que del que se busca información'
     }
 }
 
