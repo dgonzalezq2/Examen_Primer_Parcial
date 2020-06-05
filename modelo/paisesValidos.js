@@ -209,5 +209,5 @@ let paisesValidos = [
 ];
 
 module.exports = {
-    paisesValidos,
+    paisesValidos
 };
