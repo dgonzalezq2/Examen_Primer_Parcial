@@ -1,6 +1,6 @@
 const fs = require("fs");
 const neatCsv = require("neat-csv");
-const paisesValidos = require("../modelo/paisesvalidos").paisesValidos;
+const paisesValidos = require("../modelo/paisesValidos").paisesValidos;
 let informacion = [];
 let datosPorAnio = [];
 
