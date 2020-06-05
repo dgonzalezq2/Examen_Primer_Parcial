@@ -14,5 +14,5 @@ let crearArchivo = (datos, pais, anio) => {
     });
 };
 module.exports = {
-    crearArchivo,
+    crearArchivo
 };
